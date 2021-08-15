@@ -74,7 +74,7 @@ a {
 }
 
 .splitter h1 {
-  display: none;
+  opacity: 0;
 }
 
 .splitter__content {
@@ -193,8 +193,8 @@ a {
 }
 
 .splitter__content--fieldwrap .tip-selection input#tipcustom {
-  background-color: #c5e4e7;
-  border: 1px solid #c5e4e7;
+  background-color: #f4fafa;
+  border: 1px solid #f4fafa;
   color: #00494d;
 }
 
