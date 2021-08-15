@@ -1,6 +1,7 @@
 .splitter {
   background-color: $color-grey;
   padding: 100px;
+  height: 100vh;
   &__logo {
     display: block;
     text-align: center;
@@ -9,7 +10,7 @@
   &__content {
     background-color: $color-white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     &--wrapper {
       flex: 1 1 50%;
@@ -20,18 +21,61 @@
       label {
         display: block;
         margin-bottom: 10px;
+        position: relative;
+        #people-error {
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 14px;
+          color: $color-red;
+        }
+      }
+      span {
+        position: relative;
+        &::before {
+          font-size: 18px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 15px;
+          color: $color-quarternary;
+        }
+        &.bill-icon {
+          display: block;
+          &::before {
+            content: "$";
+          }
+        }
+        &.people-icon {
+          display: block;
+          &::before {
+            content: "#";
+          }
+        }
       }
       input {
         width: 100%;
         padding: 5px;
-        border: none;
-        border-radius: 5px;
         background-color: $color-light-grey;
         font-family: $font-family;
         color: $color-primary;
+        border: 1px solid $color-light-grey;
+        border-radius: 5px;
         font-weight: 700;
         text-align: right;
         font-size: $font-med;
+        cursor: pointer;
+        &.active {
+          border: 1px solid $color-primary;
+        }
+        &.error {
+          border: 1px solid $color-red;
+        }
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
       }
       .tip-selection {
         display: flex;
@@ -39,6 +83,7 @@
         input {
           flex: 1 1 30%;
           background-color: $color-primary;
+          border: 1px solid $color-primary;
           padding: 10px;
           border: none;
           border-radius: 5px;
@@ -46,15 +91,21 @@
           color: $color-white;
           font-family: $font-family;
           font-weight: 700;
-          cursor: pointer;
           transition: 250ms ease-in-out;
           text-align: center;
           &:hover {
             background-color: $color-secondary;
           }
+          &.active {
+            background-color: $color-secondary;
+          }
           &#tipcustom {
             background-color: $color-grey;
+            border: 1px solid $color-grey;
             color: $color-primary;
+            &.active {
+              border: 1px solid $color-primary;
+            }
           }
         }
       }
@@ -97,11 +148,14 @@
         &.active {
           cursor: pointer;
         }
+        &[disabled] {
+          opacity: 0.2;
+        }
       }
     }
   }
   @media screen and (max-width: 767px) {
-    padding: 0;
+    padding: 50px 0 0;
     &__content {
       flex-wrap: wrap;
       &--wrapper {

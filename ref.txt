@@ -1,0 +1,2 @@
+loop through class 'active'
+https://stackoverflow.com/questions/40153194/how-to-remove-class-from-siblings-of-an-element-without-jquery

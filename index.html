@@ -25,7 +25,9 @@
           <div class="splitter__content--wrapper">
             <div class="splitter__content--fieldwrap">
               <label for="bill">Bill</label>
-              <input type="number" id="bill" name="bill" min="1" step="any" />
+              <span class="bill-icon">
+                <input type="number" id="bill" name="bill" min="1" step="any" />
+              </span>
             </div>
             <div class="splitter__content--fieldwrap">
               <label for="tip">Select Tip %</label>
@@ -39,15 +41,21 @@
                   type="number"
                   id="tipcustom"
                   name="tip"
-                  min="1"
+                  min="0"
+                  max="100"
                   step="any"
                   placeholder="Custom"
                 />
               </div>
             </div>
             <div class="splitter__content--fieldwrap">
-              <label for="people">Number of People</label>
-              <input type="number" id="people" name="people" />
+              <label for="people"
+                >Number of People <span id="people-error"></span
+              ></label>
+
+              <span class="people-icon">
+                <input type="number" id="people" name="people" />
+              </span>
             </div>
           </div>
           <div class="splitter__content--wrapper">
