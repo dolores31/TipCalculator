@@ -12,16 +12,122 @@
     border-radius: 10px;
     display: flex;
     &--wrapper {
-      flex: 1 1 auto;
+      flex: 1 1 50%;
+      padding: 20px;
+    }
+    &--fieldwrap {
+      padding-bottom: 20px;
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 100%;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: $color-light-grey;
+        font-family: $font-family;
+        color: $color-primary;
+        font-weight: 700;
+        text-align: right;
+        font-size: $font-med;
+      }
+      .tip-selection {
+        display: flex;
+        flex-wrap: wrap;
+        input {
+          flex: 1 1 30%;
+          background-color: $color-primary;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          margin: 5px;
+          color: $color-white;
+          font-family: $font-family;
+          font-weight: 700;
+          cursor: pointer;
+          transition: 250ms ease-in-out;
+          text-align: center;
+          &:hover {
+            background-color: $color-secondary;
+          }
+          &#tipcustom {
+            background-color: $color-grey;
+            color: $color-primary;
+          }
+        }
+      }
     }
     &--wrapper:last-child {
+      position: relative;
       background-color: $color-primary;
       color: $color-light-grey;
       margin-left: 20px;
+      padding: 40px;
+      border-radius: 10px;
+      .splitter__content--fieldwrap {
+        display: flex;
+        justify-content: space-between;
+        h4 {
+          span {
+            font-size: $font-xsmall;
+            display: block;
+            margin-top: 5px;
+            color: $color-tertiary;
+          }
+        }
+        h2 {
+          color: $color-secondary;
+          font-size: $font-large;
+        }
+      }
+      #reset {
+        position: absolute;
+        bottom: 40px;
+        background-color: $color-secondary;
+        border: none;
+        border-radius: 10px;
+        width: calc(100% - 80px);
+        padding: 10px;
+        font-family: $font-family;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $color-primary;
+        &.active {
+          cursor: pointer;
+        }
+      }
     }
-    &--fieldwrap {
-      label {
-        display: block;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0;
+    &__content {
+      flex-wrap: wrap;
+      &--wrapper {
+        flex: 1 1 100%;
+        padding: 10px;
+      }
+      &--fieldwrap {
+        input {
+          font-size: $font-sm;
+        }
+      }
+      &--wrapper:last-child {
+        margin: 0;
+        padding: 20px;
+        .splitter__content--fieldwrap {
+          padding-bottom: 0;
+          h4 {
+            font-size: $font-small;
+          }
+        }
+        #reset {
+          position: relative;
+          bottom: auto;
+          margin-top: 20px;
+          width: 100%;
+        }
       }
     }
   }
