@@ -212,7 +212,7 @@ a {
   justify-content: space-between;
 }
 
-.splitter__content--wrapper:last-child .splitter__content--fieldwrap h4 span {
+.splitter__content--wrapper:last-child .splitter__content--fieldwrap p span {
   font-size: 12px;
   display: block;
   margin-top: 5px;
@@ -267,7 +267,7 @@ a {
   .splitter__content--wrapper:last-child .splitter__content--fieldwrap {
     padding-bottom: 0;
   }
-  .splitter__content--wrapper:last-child .splitter__content--fieldwrap h4 {
+  .splitter__content--wrapper:last-child .splitter__content--fieldwrap p {
     font-size: 14px;
   }
   .splitter__content--wrapper:last-child #reset {

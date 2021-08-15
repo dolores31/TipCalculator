@@ -16,11 +16,12 @@
     <link rel="stylesheet" href="files/css/styles.css" />
   </head>
   <body>
-    <section class="splitter">
+    <main class="splitter">
       <div class="container">
         <a class="splitter__logo">
           <img src="files/images/logo.svg" alt="Splitter Logo" />
         </a>
+        <h1 hidden>Splitter Calculator</h1>
         <div class="splitter__content">
           <div class="splitter__content--wrapper">
             <div class="splitter__content--fieldwrap">
@@ -30,7 +31,7 @@
               </span>
             </div>
             <div class="splitter__content--fieldwrap">
-              <label for="tip">Select Tip %</label>
+              <label for="tipcustom">Select Tip %</label>
               <div class="tip-selection">
                 <input type="button" id="tip5" value="5%" />
                 <input type="button" id="tip10" value="10%" />
@@ -60,18 +61,18 @@
           </div>
           <div class="splitter__content--wrapper">
             <div id="tipAmount" class="splitter__content--fieldwrap">
-              <h4>Tip Amount <span>/ person</span></h4>
+              <p>Tip Amount <span>/ person</span></p>
               <h2>$<span>0.00</span></h2>
             </div>
             <div id="totalAmount" class="splitter__content--fieldwrap">
-              <h4>Total <span>/ person</span></h4>
+              <p>Total <span>/ person</span></p>
               <h2>$<span>0.00</span></h2>
             </div>
             <button type="button" id="reset" disabled>Reset</button>
           </div>
         </div>
       </div>
-    </section>
+    </main>
     <script src="files/js/script.js"></script>
   </body>
 </html>

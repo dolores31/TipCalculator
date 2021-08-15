@@ -129,7 +129,7 @@
       .splitter__content--fieldwrap {
         display: flex;
         justify-content: space-between;
-        h4 {
+        p {
           span {
             font-size: $font-xsmall;
             display: block;
@@ -181,7 +181,7 @@
         padding: 20px;
         .splitter__content--fieldwrap {
           padding-bottom: 0;
-          h4 {
+          p {
             font-size: $font-small;
           }
         }
