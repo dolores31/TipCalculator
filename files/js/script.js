@@ -9,6 +9,7 @@ const tip15 = document.getElementById("tip15");
 const tip25 = document.getElementById("tip25");
 const tip50 = document.getElementById("tip50");
 const tipcustom = document.getElementById("tipcustom");
+// takes the tip value removes % and turns it into a number
 const tip5value = Number(tip5.value.replace("%", ""));
 const tip10value = Number(tip10.value.replace("%", ""));
 const tip15value = Number(tip15.value.replace("%", ""));
@@ -22,7 +23,7 @@ const tipAmount = document.querySelector("#tipAmount h2 span");
 let totalTip; // total tip
 let tipPerPerson; // total tip/people
 const totalAmount = document.querySelector("#totalAmount h2 span");
-let total;
+let total; // total (bill/people)
 let totalPerPerson; // total amount/people
 
 const reset = document.getElementById("reset");
@@ -40,18 +41,15 @@ const inputClass = function (id) {
 inputClass(bill);
 inputClass(tipcustom);
 
-// loops through tip-selection and adds 'active' class only when clicked and remvoes it to siblings
+// loops through tip-selection and adds 'active' class only when clicked and removes it to siblings
 for (let t = 0; t < tips.length; t++) {
   tips[t].addEventListener("click", function () {
-    let counter = 0;
-    while (counter < tips.length) {
-      tips[counter++].className = "";
+    let noClass = 0;
+    while (noClass < tips.length) {
+      tips[noClass++].className = "";
     }
     tips[t].className = "active";
   });
-  if (tips[t].classList.contains("active")) {
-    console.log(`${tips[t]} active`);
-  }
 }
 
 // calculates tip & total per person based on tips 'active' class
@@ -66,8 +64,8 @@ const tipTotalCalc = function (tipName, tipVal) {
   }
   // tipcustom (if not clicked - no 'active' class)
   if (tipVal == "") {
-    totalPerPerson = bill.value / people.value;
-    totalAmount.textContent = totalPerPerson.toFixed(2);
+    total = bill.value / people.value;
+    totalAmount.textContent = total.toFixed(2);
   }
 };
 
