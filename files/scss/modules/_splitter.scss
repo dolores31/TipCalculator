@@ -16,6 +16,9 @@
     text-align: center;
     margin-bottom: 50px;
   }
+  h1 {
+    display: none;
+  }
   &__content {
     background-color: $color-white;
     padding: 20px;
