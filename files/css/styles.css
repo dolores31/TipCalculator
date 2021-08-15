@@ -52,9 +52,19 @@ a {
 }
 
 .splitter {
+  position: relative;
   background-color: #c5e4e7;
   padding: 100px;
   height: 100vh;
+}
+
+@media screen and (min-width: 1300px) {
+  .splitter .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .splitter__logo {
