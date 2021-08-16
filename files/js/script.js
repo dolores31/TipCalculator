@@ -30,8 +30,7 @@ const tip50value = Number(tip50.value.replace("%", ""));
 // sum initialization
 let totalTip = 0; // total tip
 let tipPerPerson = 0; // total tip/people
-let total = 0; // total (bill/people)
-let totalPerPerson = 0; // total amount/people
+let totalPerPerson = 0; // total bill/people + tip
 
 /*-------------------- functions --------------------*/
 
@@ -46,6 +45,17 @@ const inputClass = function (id) {
 inputClass(bill);
 inputClass(tipcustom);
 
+// loops through tip-selection and adds 'active' class only when clicked and removes it to siblings
+for (let t = 0; t < tips.length; t++) {
+  tips[t].addEventListener("click", function () {
+    let noClass = 0;
+    while (noClass < tips.length) {
+      tips[noClass++].className = "";
+    }
+    tips[t].className = "active";
+  });
+}
+
 // calculates tip & total per person based on tips 'active' class
 const tipTotalCalc = function (tipName, tipVal) {
   if (tipName.classList.contains("active")) {
@@ -57,17 +67,6 @@ const tipTotalCalc = function (tipName, tipVal) {
     totalAmount.textContent = totalPerPerson.toFixed(2);
   }
 };
-
-// loops through tip-selection and adds 'active' class only when clicked and removes it to siblings
-for (let t = 0; t < tips.length; t++) {
-  tips[t].addEventListener("click", function () {
-    let noClass = 0;
-    while (noClass < tips.length) {
-      tips[noClass++].className = "";
-    }
-    tips[t].className = "active";
-  });
-}
 
 // if number of people has value only then it calculates
 people.addEventListener("input", function () {
@@ -97,6 +96,9 @@ people.addEventListener("input", function () {
 // when reset button is clicked - goes back to default
 reset.addEventListener("click", function () {
   if (reset.classList.contains("active")) {
+    reset.setAttribute("disabled", "");
+    reset.className = "";
+
     bill.value = "";
     bill.className = "";
 
@@ -111,7 +113,6 @@ reset.addEventListener("click", function () {
 
     totalTip = 0;
     tipPerPerson = 0;
-    total = 0;
     totalPerPerson = 0;
 
     tipAmount.textContent = "0.00";
