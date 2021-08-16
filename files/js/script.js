@@ -2,6 +2,7 @@
 
 /*-------------------- initialized variables --------------------*/
 const bill = document.getElementById("bill");
+
 const tips = document.querySelectorAll(".tip-selection input");
 const tip5 = document.getElementById("tip5");
 const tip10 = document.getElementById("tip10");
@@ -11,13 +12,6 @@ const tip50 = document.getElementById("tip50");
 const tipcustom = document.getElementById("tipcustom");
 const notip = document.getElementById("notip");
 
-// takes the tip value removes % and converts it into a number
-const tip5value = Number(tip5.value.replace("%", ""));
-const tip10value = Number(tip10.value.replace("%", ""));
-const tip15value = Number(tip15.value.replace("%", ""));
-const tip25value = Number(tip25.value.replace("%", ""));
-const tip50value = Number(tip50.value.replace("%", ""));
-
 const people = document.getElementById("people");
 const peopleError = document.getElementById("people-error");
 
@@ -26,7 +20,14 @@ const totalAmount = document.querySelector("#totalAmount h2 span");
 
 const reset = document.getElementById("reset");
 
-// sums initialization
+// takes the tip value removes % and converts it into a number
+const tip5value = Number(tip5.value.replace("%", ""));
+const tip10value = Number(tip10.value.replace("%", ""));
+const tip15value = Number(tip15.value.replace("%", ""));
+const tip25value = Number(tip25.value.replace("%", ""));
+const tip50value = Number(tip50.value.replace("%", ""));
+
+// sum initialization
 let totalTip = 0; // total tip
 let tipPerPerson = 0; // total tip/people
 let total = 0; // total (bill/people)
@@ -102,12 +103,11 @@ reset.addEventListener("click", function () {
     for (let t = 0; t < tips.length; t++) {
       tips[t].className = "";
     }
+    notip.className = "active";
     tipcustom.value = "";
 
     people.value = "";
     people.className = "";
-
-    notip.className = "active";
 
     totalTip = 0;
     tipPerPerson = 0;
