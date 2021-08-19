@@ -85,6 +85,7 @@ people.addEventListener("input", function () {
     // if there's no tip selected
     tipTotalCalc(notip, notip.value);
     // if one of the tips are selected
+    tipTotalCalc(tip5, tip5value);
     tipTotalCalc(tip10, tip10value);
     tipTotalCalc(tip15, tip15value);
     tipTotalCalc(tip25, tip25value);
